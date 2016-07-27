@@ -2,3 +2,8 @@
 ! See http://factorcode.org/license.txt for BSD license.
 USING: tools.test kakuro ;
 IN: kakuro.tests
+
+: line ( -- {}) { 3 4 da v 1 2 vv 4 d e 5 a 4 vv 1 vv};
+
+[ "    3\\ 4   123456789 12.......    4\\--     -----     --\\ 5       4         1    \n"] [ line drawRow ] unit-test
+
