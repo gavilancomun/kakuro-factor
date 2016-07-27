@@ -21,6 +21,9 @@ GENERIC: draw ( item -- string )
 
 M: emptycell draw drop "   -----  " ;
 M: acrosscell draw across>> "   --\\%2d  " sprintf ;
+M: downcell draw down>> "   %2d\\--  " sprintf ;
+M: downacrosscell draw [ down>> ] [ across>> ] bi "   %2d\\%2d  " sprintf ;
+M: valuecell draw values>> ;
 
 : drawRow ( {} -- string ) [ draw ] map ;
 
