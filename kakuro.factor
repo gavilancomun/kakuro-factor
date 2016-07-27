@@ -22,3 +22,5 @@ GENERIC: draw ( item -- string )
 M: emptycell draw drop "   -----  " ;
 M: acrosscell draw across>> "   --\\%2d  " sprintf ;
 
+: drawRow ( {} -- string ) [ draw ] map ;
+
