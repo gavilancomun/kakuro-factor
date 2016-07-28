@@ -1,7 +1,7 @@
 ! Copyright (C) 2016 Your name.
 ! See http://factorcode.org/license.txt for BSD license.
 
-USING: accessors formatting kernel math.ranges sequences ;
+USING: accessors formatting kernel math.ranges math.parser sequences ;
 IN: kakuro
 
 TUPLE: acrosscell across ;
@@ -19,11 +19,14 @@ TUPLE: valuecell values ;
 
 GENERIC: draw ( item -- string )
 
+: oneValue ( value -- str ) first "     %d    " sprintf ;
+: drawMany ( values -- str ) [ number>string ] map " " prefix concat ;
+
 M: emptycell draw drop "   -----  " ;
 M: acrosscell draw across>> "   --\\%2d  " sprintf ;
 M: downcell draw down>> "   %2d\\--  " sprintf ;
 M: downacrosscell draw [ down>> ] [ across>> ] bi "   %2d\\%2d  " sprintf ;
-M: valuecell draw values>> ;
+M: valuecell draw values>> dup length 1 = [ oneValue ] [ drawMany ] if ;
 
-: drawRow ( {} -- string ) [ draw ] map ;
+: drawRow ( {} -- string ) [ draw ] map concat ;
 
