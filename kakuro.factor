@@ -1,7 +1,7 @@
 ! Copyright (C) 2016 Your name.
 ! See http://factorcode.org/license.txt for BSD license.
 
-USING: accessors formatting hash-sets kernel locals math.ranges math.parser sequences sets ;
+USING: accessors combinators.smart formatting hash-sets kernel locals math.ranges math.parser sequences sets ;
 IN: kakuro
 
 TUPLE: acrosscell across ;
