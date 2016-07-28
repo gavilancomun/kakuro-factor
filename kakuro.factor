@@ -1,5 +1,3 @@
-! Copyright (C) 2016 Your name.
-! See http://factorcode.org/license.txt for BSD license.
 
 USING: accessors combinators.smart formatting hash-sets kernel locals math.ranges math.parser sequences sets ;
 IN: kakuro
@@ -21,7 +19,7 @@ GENERIC: draw ( cell -- str )
 
 :: oneOfMany ( n values -- str ) n values in? [ n number>string ] [ "." ] if ;
 
-: drawOne ( value -- str ) members first "     %d    " sprintf ;
+: drawOne ( values -- str ) members first "     %d    " sprintf ;
 :: drawMany ( values -- str ) 9 [1,b] [ values oneOfMany ] map " " prefix concat ;
 
 M: emptycell draw drop "   -----  " ;
