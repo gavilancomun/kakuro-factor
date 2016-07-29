@@ -3,9 +3,9 @@ USING: tools.test kakuro combinators.smart sequences ;
 IN: kakuro.tests
 
 [ "   -----  " ] [ e draw ] unit-test
-[ "   -----  " ] [ 5 a draw ] unit-test
-[ "   -----  " ] [ 4 d draw ] unit-test
-[ "   -----  " ] [ 3 4 da draw ] unit-test
+[ "   --\\ 5  " ] [ 5 a draw ] unit-test
+[ "    4\\--  " ] [ 4 d draw ] unit-test
+[ "    3\\ 4  " ] [ 3 4 da draw ] unit-test
 [ " 123456789" ] [ v draw ] unit-test
 [ " 12......." ] [ { 1 2 } vv draw ] unit-test
 
